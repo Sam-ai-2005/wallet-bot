@@ -4,6 +4,7 @@ from handlers.charge import charge_handler
 from handlers.amount import amount_handler
 from config import BOT_TOKEN
 from handlers.start import start_handler
+from database.models import create_tables
 
 BASE_URL = f"https://tapi.bale.ai/bot{BOT_TOKEN}"
 
@@ -21,9 +22,13 @@ def get_updates(offset):
 
 
 def main():
-
+    
     offset = 0
 
+    create_tables()
+   
+    
+    
     print("Bot is running...")
 
     while True:

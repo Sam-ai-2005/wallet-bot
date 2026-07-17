@@ -23,11 +23,11 @@ def get_updates(offset):
 
 def main():
     
-    offset = 0
+   
 
     create_tables()
    
-    
+    offset = 0
     
     print("Bot is running...")
 

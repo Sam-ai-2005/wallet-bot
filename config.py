@@ -14,4 +14,5 @@ ZARINPAL_STARTPAY_URL = "https://sandbox.zarinpal.com/pg/StartPay/"
 
 MERCHANT_ID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
-CALLBACK_URL = "https://example.com/callback"
+CALLBACK_URL = "https://even-overplay-wisplike.ngrok-free.dev/payment/callback"
+ZARINPAL_VERIFY_URL = "https://sandbox.zarinpal.com/pg/v4/payment/verify.json"

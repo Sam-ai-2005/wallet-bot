@@ -31,24 +31,81 @@ def create_transaction(chat_id, amount):
 
 
 
-def updat_payment_url(transaction_id, payment_url):
+
+
+def update_payment(transaction_id, authority, payment_url):
     conn = get_connection()
     cursor = conn.cursor()
-    cursor.execute(
-        """
+
+    cursor.execute("""
         UPDATE transactions
-        SET payment_url = ?
+        SET authority = ?, payment_url = ?
         WHERE id = ?
-        """ ,
-        (payment_url, transaction_id)
-
-
-    )
+    """, (
+        authority,
+        payment_url,
+        transaction_id
+    ))
 
     conn.commit()
+    conn.close()
+     
 
+
+def get_transaction_by_authority(authority):
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT *
+        FROM transactions
+        WHERE authority = ?
+    """, (authority,))
+
+    transaction = cursor.fetchone()
+
+    conn.close()
+
+    return transaction
+
+
+
+def update_status(transaction_id, status):
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE transactions
+        SET status = ?
+        WHERE id = ?
+    """, (
+        status,
+        transaction_id
+    ))
+
+    conn.commit()
     conn.close()
 
 
 
-     
+def complete_transaction(transaction_id, ref_id):
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE transactions
+        SET
+            status = ?,
+            ref_id = ?
+        WHERE id = ?
+    """, (
+        "SUCCESS",
+        ref_id,
+        transaction_id
+    ))
+
+    conn.commit()
+    conn.close()    

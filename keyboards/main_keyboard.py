@@ -6,6 +6,13 @@ def get_main_keyboard():
                     "text": "💳 شارژ کیف پول"
                 }
             ]
+        ,
+        
+            [
+                {
+                    "text":"شروع مجدد"
+                }
+            ]
         ],
-        "resize_keyboard": True
+        "resize_keyboard": Trues
     }

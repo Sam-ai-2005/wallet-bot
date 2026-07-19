@@ -5,7 +5,7 @@ from handlers.amount import amount_handler
 from config import BOT_TOKEN
 from handlers.start import start_handler
 from database.models import create_tables
-from services.wallet_service import increase_balance,get_balance
+
 
 BASE_URL = f"https://tapi.bale.ai/bot{BOT_TOKEN}"
 
@@ -61,7 +61,7 @@ def main():
             if text == "/start":
                 start_handler(chat_id)
 
-            elif text ==  " شارژ کیف پول":
+            elif text ==  "💳 شارژ کیف پول":
                 charge_handler(chat_id)  
 
             else:

@@ -10,5 +10,5 @@ def charge_handler(chat_id):
 
     send_message(
         chat_id=chat_id,
-        text=" لطفاً مبلغ موردنظر را به تومان وارد کنید."
+        text="💳 لطفاً مبلغ موردنظر را به تومان وارد کنید."
     )

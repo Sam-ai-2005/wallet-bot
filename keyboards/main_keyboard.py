@@ -14,5 +14,5 @@ def get_main_keyboard():
                 }
             ]
         ],
-        "resize_keyboard": Trues
+        "resize_keyboard": True
     }

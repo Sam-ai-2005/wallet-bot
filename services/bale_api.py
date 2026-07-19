@@ -1,8 +1,3 @@
-import requests 
-from config import BOT_TOKEN
-
-BASE_URL = f"https://tapi.bale.ai/bot{BOT_TOKEN}"
-
 import requests
 
 from config import BOT_TOKEN

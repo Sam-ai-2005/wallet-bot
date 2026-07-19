@@ -17,7 +17,7 @@ def amount_handler(chat_id, text):
     if not text.isdigit():
         send_message(
             chat_id,
-            "❌ لطفاً فقط عدد وارد کنید."
+            " لطفاً فقط عدد وارد کنید."
         )
         return
 
@@ -26,7 +26,7 @@ def amount_handler(chat_id, text):
     if amount < 1000:
         send_message(
             chat_id,
-            "❌ حداقل مبلغ شارژ ۱۰۰۰ تومان است."
+            " حداقل مبلغ شارژ 1000 تومان است."
         )
         return
 
@@ -41,7 +41,7 @@ def amount_handler(chat_id, text):
     if not payment:
         send_message(
             chat_id,
-            "❌ خطا در ایجاد لینک پرداخت."
+            " خطا در ایجاد لینک پرداخت."
         )
         return
 
@@ -60,7 +60,7 @@ def amount_handler(chat_id, text):
 
     send_message(
         chat_id,
-        f"""✅ مبلغ {amount:,} تومان ثبت شد.
+        f""" مبلغ {amount:,} تومان ثبت شد.
 
 🆔 شماره تراکنش: {transaction_id}
 

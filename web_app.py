@@ -20,15 +20,15 @@ def payment_callback():
     status = request.args.get("Status")
 
     if status != "OK":
-        return "❌ پرداخت توسط کاربر لغو شد."
+        return " پرداخت توسط کاربر لغو شد."
 
     transaction = get_transaction_by_authority(authority)
 
     if transaction is None:
-        return "❌ تراکنش پیدا نشد."
+        return " تراکنش پیدا نشد."
 
     if transaction["status"] == "SUCCESS":
-        return "✅ این تراکنش قبلاً پردازش شده است."
+        return " این تراکنش قبلاً پردازش شده است."
 
     verify_result = verify_payment(
         authority,
@@ -36,7 +36,7 @@ def payment_callback():
     )
 
     if not verify_result["success"]:
-        return "❌ پرداخت تایید نشد."
+        return " پرداخت تایید نشد."
 
     complete_transaction(
         transaction["id"],

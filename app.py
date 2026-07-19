@@ -61,7 +61,7 @@ def main():
             if text == "/start":
                 start_handler(chat_id)
 
-            elif text ==  "💳 شارژ کیف پول":
+            elif text ==  " شارژ کیف پول":
                 charge_handler(chat_id)  
 
             else:
